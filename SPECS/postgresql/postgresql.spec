@@ -305,9 +305,6 @@ rm -rf %{buildroot}/*
 %{_mandir}/man1/vacuumdb.*
 %{_mandir}/man3/*
 %{_mandir}/man7/*
-# Install the bitcode directory generated for LLVM in the main package,
-# so that extensions can use this directory.
-%dir %{_libdir}/bitcode
 
 %files libs
 %defattr(-,root,root)
@@ -479,9 +476,9 @@ rm -rf %{buildroot}/*
 
 %files llvmjit
 %defattr(-,root,root)
-%{_libdir}/bitcode/*
-%{_libdir}/llvmjit.so
-%{_libdir}/llvmjit_types.bc
+%{_libdir}/postgresql/bitcode/*
+%{_libdir}/postgresql/llvmjit.so
+%{_libdir}/postgresql/llvmjit_types.bc
 
 %files devel
 %defattr(-,root,root)
